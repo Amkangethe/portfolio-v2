@@ -14,3 +14,37 @@ input::placeholder { color: oklch(0.52 0.012 255); }
   0%, 100% { opacity: 1; }
   50%       { opacity: 0; }
 }
+
+/* ── Responsive ─────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* About: stack bio above headshot */
+  .about-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Projects: single column */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer: single column */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Education cards: stack icon + text */
+  [data-dc-tpl="100"], [data-dc-tpl="111"] {
+    flex-direction: column !important;
+  }
+
+  /* Tighten hero padding on mobile */
+  [data-dc-tpl="19"] {
+    padding: 96px 16px 56px !important;
+  }
+
+  /* Tighten section padding */
+  [data-dc-tpl="64"], [data-dc-tpl="122"], [data-dc-tpl="188"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
