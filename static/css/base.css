@@ -1,0 +1,16 @@
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+::selection        { background: oklch(0.82 0.13 195 / 0.28); }
+input::placeholder { color: oklch(0.52 0.012 255); }
+
+.typewriter-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: oklch(0.82 0.13 195);
+  animation: cursor-blink 0.8s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}

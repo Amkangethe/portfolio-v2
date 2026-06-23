@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Allan Kangethe</title>
+
+  <!-- DC framework runtime -->
+  <script src="./support.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" data-dc-tpl="1">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin data-dc-tpl="2">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" data-dc-tpl="3">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../static/css/dc-framework.css">
+  <link rel="stylesheet" href="../static/css/animations.css">
+  <link rel="stylesheet" href="../static/css/base.css">
+
+  <!-- React (required by DC runtime) -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div id="dc-root"><div class="sc-host" data-sc-name="Portfolio"><div data-dc-tpl="5" style="position: relative; min-height: 100vh; background: oklch(0.15 0.012 255); color: oklch(0.94 0.006 255); font-family: &quot;JetBrains Mono&quot;, ui-monospace, monospace; font-size: 14px; line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden;">
+
+  <!-- Background glow orbs -->
+  <div data-dc-tpl="6" style="position: fixed; inset: 0px; z-index: 0; overflow: hidden; pointer-events: none;">
+    <div id="glow-1" data-dc-tpl="7" style="position: absolute; left: -8%; top: -22%; width: 62vw; height: 62vw; border-radius: 50%; background: radial-gradient(circle, oklch(0.7 0.14 58 / 0.28), transparent 68%); filter: blur(72px); will-change: transform;"></div>
+    <div id="glow-2" data-dc-tpl="8" style="position: absolute; right: -10%; bottom: -24%; width: 60vw; height: 60vw; border-radius: 50%; background: radial-gradient(circle, oklch(0.74 0.13 205 / 0.45), transparent 68%); filter: blur(80px); will-change: transform;"></div>
+    <div id="glow-3" data-dc-tpl="9" style="position: absolute; left: 40%; top: 30%; width: 40vw; height: 40vw; border-radius: 50%; background: radial-gradient(circle, oklch(0.62 0.12 300 / 0.3), transparent 70%); filter: blur(80px); will-change: transform;"></div>
+    <div data-dc-tpl="10" style="position: absolute; inset: 0px; background-image: linear-gradient(oklch(0.34 0.012 255 / 0.35) 1px, transparent 1px), linear-gradient(90deg, oklch(0.34 0.012 255 / 0.35) 1px, transparent 1px); background-size: 46px 46px; mask-image: radial-gradient(circle at 50% 38%, black, transparent 82%);"></div>
+  </div>
+
+  <!-- Navigation -->
+  <div data-dc-tpl="11" style="position: fixed; top: 18px; left: 50%; transform: translateX(-50%); z-index: 100; display: flex; gap: 4px; padding: 6px; border-radius: 100px; background: oklch(0.2 0.013 255 / 0.55); backdrop-filter: blur(14px); border: 1px solid oklch(0.32 0.014 255 / 0.6); box-shadow: oklch(0 0 0 / 0.7) 0px 12px 40px -14px;">
+    <a data-dc-tpl="14" href="#top" style="display: block; padding: 8px 18px; border-radius: 100px; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.01em; color: oklch(0.97 0.006 255); background: oklch(0.31 0.018 255);"><span class="sc-interp">Home</span></a>
+    <a data-dc-tpl="16" href="#about" class="scp0" style="display: block; padding: 8px 18px; border-radius: 100px; text-decoration: none; font-size: 13px; letter-spacing: 0.01em; color: oklch(0.66 0.012 255);"><span class="sc-interp">About</span></a>
+    <a data-dc-tpl="16" href="#projects" class="scp0" style="display: block; padding: 8px 18px; border-radius: 100px; text-decoration: none; font-size: 13px; letter-spacing: 0.01em; color: oklch(0.66 0.012 255);"><span class="sc-interp">Projects</span></a>
+    <a data-dc-tpl="16" href="#contact" class="scp0" style="display: block; padding: 8px 18px; border-radius: 100px; text-decoration: none; font-size: 13px; letter-spacing: 0.01em; color: oklch(0.66 0.012 255);"><span class="sc-interp">Contact</span></a>
+  </div>
+
+  <div data-dc-tpl="17" style="position: relative; z-index: 1;">
+
+  <!-- ── Hero ── -->
+  <span data-dc-tpl="18" id="top" style="scroll-margin-top: 96px;"></span>
+  <section data-dc-tpl="19" style="max-width: 760px; margin: 0px auto; padding: 128px 24px 80px; text-align: center;">
+    <h1 data-dc-tpl="20" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 700; font-size: clamp(44px, 8vw, 84px); line-height: 1; letter-spacing: -0.04em; margin: 0px 0px 18px;">Hi, I'm Allan.</h1>
+    <p data-dc-tpl="21" style="font-size: 16px; letter-spacing: 0.01em; color: oklch(0.72 0.012 255); margin: 0px 0px 44px;">
+      <span id="typewriter-text"></span><span class="typewriter-cursor">|</span>
+    </p>
+
+    <!-- Chat widget -->
+    <div data-dc-tpl="22" style="text-align: left; border: 1px solid oklch(0.3 0.014 255); border-radius: 18px; background: oklch(0.185 0.013 255 / 0.72); backdrop-filter: blur(8px); overflow: hidden; box-shadow: oklch(0 0 0 / 0.7) 0px 30px 70px -30px;">
+      <div data-dc-tpl="23" style="display: flex; align-items: center; justify-content: space-between; padding: 13px 16px; border-bottom: 1px solid oklch(0.28 0.012 255);">
+        <div data-dc-tpl="24" style="display: flex; align-items: center; gap: 9px; font-size: 12.5px; color: oklch(0.78 0.012 255);">
+          <span data-dc-tpl="25" style="width: 8px; height: 8px; border-radius: 50%; background: rgb(125, 226, 252); animation: 2.4s ease 0s infinite normal none running scpulse;"></span>
+          assistant <span data-dc-tpl="26" style="color: oklch(0.5 0.012 255);">— online</span>
+        </div>
+        <div data-dc-tpl="27" style="font-size: 11px; color: oklch(0.5 0.012 255); letter-spacing: 0.05em;">mũrata v1.0</div>
+      </div>
+
+      <div id="chat-log" data-dc-tpl="28" style="height: 288px; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 18px;">
+        <div id="chat-empty" data-dc-tpl="30" style="flex: 1 1 0%; display: flex; align-items: center; justify-content: center; text-align: center; color: oklch(0.56 0.012 255); font-size: 15px; padding: 0px 16px;">Ask me anything about Allan…</div>
+      </div>
+
+      <div data-dc-tpl="53" style="padding: 14px 16px; border-top: 1px solid oklch(0.28 0.012 255);">
+        <div data-dc-tpl="54" style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 12px;">
+          <button data-dc-tpl="56" class="scp2" style="border: 1px solid oklch(0.3 0.014 255); border-radius: 100px; background: transparent; color: oklch(0.72 0.012 255); font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 12px; padding: 7px 14px; cursor: pointer; white-space: nowrap;"><span class="sc-interp">Work</span></button>
+          <button data-dc-tpl="56" class="scp2" style="border: 1px solid oklch(0.3 0.014 255); border-radius: 100px; background: transparent; color: oklch(0.72 0.012 255); font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 12px; padding: 7px 14px; cursor: pointer; white-space: nowrap;"><span class="sc-interp">About</span></button>
+          <button data-dc-tpl="56" class="scp2" style="border: 1px solid oklch(0.3 0.014 255); border-radius: 100px; background: transparent; color: oklch(0.72 0.012 255); font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 12px; padding: 7px 14px; cursor: pointer; white-space: nowrap;"><span class="sc-interp">Skills</span></button>
+          <button data-dc-tpl="56" class="scp2" style="border: 1px solid oklch(0.3 0.014 255); border-radius: 100px; background: transparent; color: oklch(0.72 0.012 255); font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 12px; padding: 7px 14px; cursor: pointer; white-space: nowrap;"><span class="sc-interp">Contact</span></button>
+        </div>
+        <div data-dc-tpl="57" style="display: flex; align-items: center; gap: 10px; border: 1px solid oklch(0.32 0.014 255); border-radius: 100px; background: oklch(0.155 0.012 255 / 0.8); padding: 11px 16px;">
+          <span data-dc-tpl="58" style="color: oklch(0.82 0.13 195); font-weight: 700; flex: 0 0 auto;">›</span>
+          <input id="chat-input" data-dc-tpl="59" placeholder="Ask anything about Allan…" value="" style="flex: 1 1 0%; min-width: 0px; background: transparent; border: none; outline: none; color: oklch(0.94 0.006 255); font-family: &quot;JetBrains Mono&quot;, monospace; font-size: 14px; caret-color: oklch(0.82 0.13 195);">
+          <button id="chat-send" data-dc-tpl="60" class="scp3" style="flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border: 1px solid oklch(0.32 0.014 255); border-radius: 50%; background: oklch(0.205 0.014 255); color: oklch(0.82 0.13 195); font-size: 15px; cursor: pointer;">→</button>
+        </div>
+      </div>
+    </div>
+
+    <a data-dc-tpl="61" href="#about" class="scp4" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: 30px; color: oklch(0.52 0.012 255); text-decoration: none; font-size: 12px; letter-spacing: 0.06em;">
+      <span data-dc-tpl="62" style="animation: 2.2s ease 0s infinite normal none running scbob;">↓</span> scroll to explore
+    </a>
+  </section>
+
+  <!-- ── About ── -->
+  <span data-dc-tpl="63" id="about" style="scroll-margin-top: 96px;"></span>
+  <section data-dc-tpl="64" style="max-width: 1040px; margin: 0px auto; padding: 64px 24px 24px;">
+    <div data-dc-tpl="65" style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: oklch(0.82 0.13 195); margin-bottom: 22px;">// about</div>
+    <div data-dc-tpl="66" style="display: grid; grid-template-columns: 1.55fr 1fr; gap: 44px; align-items: center;">
+      <div data-dc-tpl="67">
+        <h2 data-dc-tpl="68" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: clamp(26px, 3.4vw, 36px); line-height: 1.18; letter-spacing: -0.02em; margin: 0px 0px 18px; color: oklch(0.95 0.006 255); text-wrap: pretty;">I take AI/ML ideas from a notebook to shipped, production software.</h2>
+        <p data-dc-tpl="69" style="font-size: 14.5px; line-height: 1.7; color: oklch(0.80 0.008 255); margin: 0px 0px 24px; max-width: 520px; text-wrap: pretty;">I specialize in moving AI from research into the real world — integrating models into applications with clean backends and functional frontends, with an eye on scalability and maintainability.</p>
+        <div data-dc-tpl="70" style="display: flex; flex-wrap: wrap; gap: 10px 28px; font-size: 13px;">
+          <div data-dc-tpl="71"><span data-dc-tpl="72" style="color: oklch(0.5 0.012 255);">focus&nbsp;&nbsp;</span><span data-dc-tpl="73" style="color: oklch(0.9 0.006 255);">AI/ML · Software Engineering</span></div>
+          <div data-dc-tpl="74"><span data-dc-tpl="75" style="color: oklch(0.5 0.012 255);">based&nbsp;&nbsp;</span><span data-dc-tpl="76" style="color: oklch(0.9 0.006 255);">Washington, DC</span></div>
+        </div>
+        <div data-dc-tpl="78" style="display: inline-flex; align-items: center; gap: 9px; margin-top: 24px; padding: 8px 14px; border: 1px solid oklch(0.32 0.014 255); border-radius: 100px; font-size: 12.5px; color: oklch(0.86 0.006 255);">
+          <span data-dc-tpl="79" style="position: relative; display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; flex-shrink: 0;">
+            <span data-dc-tpl="80" style="position: absolute; inset: 1px; border-radius: 50%; background: oklch(0.85 0.18 135); animation: 1.6s ease-out 0s infinite normal none running scping;"></span>
+            <span data-dc-tpl="81" style="position: relative; width: 8px; height: 8px; border-radius: 50%; background: oklch(0.8 0.16 135);"></span>
+          </span>
+          Open to internships &amp; full-time roles
+        </div>
+      </div>
+      <div data-dc-tpl="82" style="position: relative; border-radius: 16px; overflow: hidden; border: 1px solid oklch(0.3 0.014 255); aspect-ratio: 4 / 5; box-shadow: oklch(0 0 0 / 0.7) 0px 24px 60px -30px;">
+        <img data-dc-tpl="83" src="static\img\headshot.jpg" alt="Allan Kangethe" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
+        <div data-dc-tpl="84" style="position: absolute; inset: 0px; background: linear-gradient(to top, oklch(0.13 0.012 255 / 0.5), transparent 42%);"></div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div data-dc-tpl="96" style="display: flex; align-items: baseline; gap: 14px; margin: 56px 0px 24px;">
+      <div data-dc-tpl="97" style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: oklch(0.82 0.13 195);">// education</div>
+      <div data-dc-tpl="98" style="flex: 1 1 0%; height: 1px; background: oklch(0.26 0.012 255);"></div>
+    </div>
+    <div data-dc-tpl="99" style="display: flex; flex-direction: column; gap: 16px; cursor: default;">
+
+      <div data-dc-tpl="100" class="scp5" style="display: flex; gap: 20px; border: 1px solid oklch(0.28 0.014 255); border-radius: 14px; background: oklch(0.185 0.013 255 / 0.6); backdrop-filter: blur(6px); padding: 24px 26px; transition: border-color 0.2s;">
+        <div data-dc-tpl="101" style="flex: 0 0 auto; width: 54px; height: 54px; border-radius: 12px; background: oklch(0.97 0.005 255); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <img data-dc-tpl="102" src="static\img\education\gatech.png" alt="Georgia Tech" style="width: 40px; height: 40px; object-fit: contain;">
+        </div>
+        <div data-dc-tpl="103" style="flex: 1 1 0%; min-width: 0px;">
+          <div data-dc-tpl="104" style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px;">
+            <h3 data-dc-tpl="105" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 18px; letter-spacing: -0.01em; margin: 0px; color: oklch(0.96 0.006 255);">Master of Science — Computer Science</h3>
+            <span data-dc-tpl="106" style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; color: oklch(0.58 0.012 255);">Jan 2026 — Aug 2027 (exp.)</span>
+          </div>
+          <div data-dc-tpl="107" style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: oklch(0.78 0.12 205); margin-top: 5px;">Georgia Institute of Technology</div>
+          <div data-dc-tpl="108" style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12.5px; color: oklch(0.62 0.012 255); margin-top: 8px;">Specialization in Artificial Intelligence</div>
+          <p data-dc-tpl="109" style="border-left: 2px solid oklch(0.74 0.13 205 / 0.5); padding-left: 14px; margin: 14px 0px 0px; font-style: italic; font-size: 13.5px; line-height: 1.6; color: oklch(0.7 0.012 255);">Focused on machine-learning systems — taking models from research into reliable, production-grade software.</p>
+          <div data-dc-tpl="110" style="font-family: &quot;Space Mono&quot;, monospace; font-size: 11.5px; color: oklch(0.52 0.012 255); margin-top: 12px;">Atlanta, GA</div>
+        </div>
+      </div>
+
+      <div data-dc-tpl="111" class="scp5" style="cursor: default; display: flex; gap: 20px; border: 1px solid oklch(0.28 0.014 255); border-radius: 14px; background: oklch(0.185 0.013 255 / 0.6); backdrop-filter: blur(6px); padding: 24px 26px; transition: border-color 0.2s;">
+        <div data-dc-tpl="112" style="flex: 0 0 auto; width: 54px; height: 54px; border-radius: 12px; background: oklch(0.97 0.005 255); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <img data-dc-tpl="113" src="static\img\education\umbc.png" alt="UMBC" style="width: 40px; height: 40px; object-fit: contain;">
+        </div>
+        <div data-dc-tpl="114" style="flex: 1 1 0%; min-width: 0px;">
+          <div data-dc-tpl="115" style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px;">
+            <h3 data-dc-tpl="116" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 18px; letter-spacing: -0.01em; margin: 0px; color: oklch(0.96 0.006 255);">Bachelor of Science — Computer Science</h3>
+            <span data-dc-tpl="117" style="font-family: &quot;Space Mono&quot;, monospace; font-size: 12px; color: oklch(0.58 0.012 255);">Sep 2022 — May 2025</span>
+          </div>
+          <div data-dc-tpl="118" style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: oklch(0.78 0.12 205); margin-top: 5px;">University of Maryland, Baltimore County</div>
+          <p data-dc-tpl="119" style="border-left: 2px solid oklch(0.74 0.13 205 / 0.5); padding-left: 14px; margin: 14px 0px 0px; font-style: italic; font-size: 13.5px; line-height: 1.6; color: oklch(0.7 0.012 255);">Built a strong foundation in algorithms, systems, and full-stack engineering — the groundwork for everything I build now.</p>
+          <div data-dc-tpl="120" style="font-family: &quot;Space Mono&quot;, monospace; font-size: 11.5px; color: oklch(0.52 0.012 255); margin-top: 12px;">Baltimore, MD</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Stack ── -->
+  <span data-dc-tpl="121" id="stack" style="scroll-margin-top: 96px;"></span>
+  <section data-dc-tpl="122" style="cursor: default; max-width: 1040px; margin: 0px auto; padding: 56px 24px 24px;">
+    <div data-dc-tpl="123" style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 30px; border-bottom: 1px solid oklch(0.26 0.012 255); padding-bottom: 16px;">
+      <h2 data-dc-tpl="124" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 26px; letter-spacing: -0.02em; margin: 0px;">My Stack</h2>
+      <span data-dc-tpl="125" style="font-size: 12px; color: oklch(0.52 0.012 255);">// tools I build with</span>
+    </div>
+    <div data-dc-tpl="126" style="display: flex; flex-direction: column; gap: 20px;">
+
+      <div data-dc-tpl="127" style="display: flex; align-items: center; gap: 22px;">
+        <div data-dc-tpl="128" style="flex: 0 0 auto; width: 128px; font-size: 13px; letter-spacing: 0.05em; color: oklch(0.86 0.012 255);">Frontend</div>
+        <div data-dc-tpl="129" style="flex: 1 1 0%; min-width: 0px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);">
+          <div data-dc-tpl="130" class="scp6" style="display: flex; gap: 12px; width: max-content; animation: 34s linear 0s infinite normal none running scrollx-left;">
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">JavaScript</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">HTML / CSS</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Node.js</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">REST APIs</span>
+            <!-- duplicate for seamless loop -->
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">JavaScript</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">HTML / CSS</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Node.js</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">REST APIs</span>
+          </div>
+        </div>
+      </div>
+
+      <div data-dc-tpl="139" style="display: flex; align-items: center; gap: 22px;">
+        <div data-dc-tpl="140" style="flex: 0 0 auto; width: 128px; font-size: 13px; letter-spacing: 0.05em; color: oklch(0.86 0.012 255);">Backend</div>
+        <div data-dc-tpl="141" style="flex: 1 1 0%; min-width: 0px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);">
+          <div data-dc-tpl="142" class="scp6" style="display: flex; gap: 12px; width: max-content; animation: 30s linear 0s infinite normal none running scrollx-right;">
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Python</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Flask</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Django</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Java</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">C++</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">C#</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Python</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Flask</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Django</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Java</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">C++</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">C#</span>
+          </div>
+        </div>
+      </div>
+
+      <div data-dc-tpl="151" style="display: flex; align-items: center; gap: 22px;">
+        <div data-dc-tpl="152" style="flex: 0 0 auto; width: 128px; font-size: 13px; letter-spacing: 0.05em; color: oklch(0.86 0.012 255);">AI / ML</div>
+        <div data-dc-tpl="153" style="flex: 1 1 0%; min-width: 0px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);">
+          <div data-dc-tpl="154" class="scp6" style="display: flex; gap: 12px; width: max-content; animation: 38s linear 0s infinite normal none running scrollx-left;">
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">TensorFlow</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Keras</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">CNN</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">LLMs</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Ollama</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Deep Learning</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">TensorFlow</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Keras</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">CNN</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">LLMs</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Ollama</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Deep Learning</span>
+          </div>
+        </div>
+      </div>
+
+      <div data-dc-tpl="163" style="display: flex; align-items: center; gap: 22px;">
+        <div data-dc-tpl="164" style="flex: 0 0 auto; width: 128px; font-size: 13px; letter-spacing: 0.05em; color: oklch(0.86 0.012 255);">Data</div>
+        <div data-dc-tpl="165" style="flex: 1 1 0%; min-width: 0px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);">
+          <div data-dc-tpl="166" class="scp6" style="display: flex; gap: 12px; width: max-content; animation: 26s linear 0s infinite normal none running scrollx-right;">
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">SQL</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">SQLite</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">NoSQL</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">R</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Tableau</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Hadoop</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">SQL</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">SQLite</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">NoSQL</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">R</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Tableau</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Hadoop</span>
+          </div>
+        </div>
+      </div>
+
+      <div data-dc-tpl="175" style="display: flex; align-items: center; gap: 22px;">
+        <div data-dc-tpl="176" style="flex: 0 0 auto; width: 128px; font-size: 13px; letter-spacing: 0.05em; color: oklch(0.86 0.012 255);">Cloud &amp; DevOps</div>
+        <div data-dc-tpl="177" style="flex: 1 1 0%; min-width: 0px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);">
+          <div data-dc-tpl="178" class="scp6" style="display: flex; gap: 12px; width: max-content; animation: 32s linear 0s infinite normal none running scrollx-left;">
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">AWS</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Git</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Linux</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">JIRA</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Agile / SDLC</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">AWS</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Git</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Linux</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">JIRA</span>
+            <span style="display:inline-flex;align-items:center;border:1px solid oklch(0.28 0.014 255);border-radius:8px;background:oklch(0.2 0.013 255);padding:8px 14px;font-size:12.5px;color:oklch(0.84 0.006 255);white-space:nowrap;">Agile / SDLC</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Projects ── -->
+  <span data-dc-tpl="187" id="projects" style="scroll-margin-top: 96px;"></span>
+  <section data-dc-tpl="188" style="max-width: 1040px; margin: 0px auto; padding: 48px 24px 24px;">
+    <div data-dc-tpl="189" style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 28px; border-bottom: 1px solid oklch(0.26 0.012 255); padding-bottom: 16px;">
+      <h2 data-dc-tpl="190" style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 26px; letter-spacing: -0.02em; margin: 0px;">Projects</h2>
+      <span data-dc-tpl="191" style="font-size: 12px; color: oklch(0.52 0.012 255);">// 2022 — 2026</span>
+    </div>
+    <div data-dc-tpl="192" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+
+      <!-- Socratic Feedback AI Tutor -->
+      <a href="https://github.com/Amkangethe/final-project" target="_blank" rel="noopener" class="scp7" style="display: block; text-decoration: none; color: inherit; border: 1px solid oklch(0.27 0.012 255); border-radius: 14px; overflow: hidden; background: oklch(0.185 0.013 255 / 0.85); transition: transform 0.18s, border-color 0.18s;">
+        <div style="height: 188px; border-bottom: 1px solid oklch(0.27 0.012 255); background-color: oklch(0.2 0.013 255); background-image: repeating-linear-gradient(135deg, oklch(0.27 0.012 255) 0px, oklch(0.27 0.012 255) 1px, transparent 1px, transparent 11px); display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 11px; color: oklch(0.5 0.012 255); letter-spacing: 0.08em;">[ project shot ]</span>
+        </div>
+        <div style="padding: 18px 18px 20px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+            <h3 style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 19px; letter-spacing: -0.01em; margin: 0px;">Socratic AI Tutor</h3>
+            <span style="font-size: 11px; color: oklch(0.82 0.13 195);">2026</span>
+          </div>
+          <p style="font-size: 13px; color: oklch(0.80 0.008 255); line-height: 1.55; margin: 8px 0px 0px;">Full-stack web app delivering adaptive, Socratic-style feedback on coding problems — powered by GPT-OSS running locally via Ollama, with no API costs and full data privacy.</p>
+          <div style="font-size: 11px; color: oklch(0.52 0.012 255); margin-top: 12px; letter-spacing: 0.04em;">Python · Flask · LLMs · Ollama</div>
+        </div>
+      </a>
+
+      <!-- Breast Cancer Detection -->
+      <a href="https://github.com/Nalan12/AI4ALL_Project" target="_blank" rel="noopener" class="scp7" style="display: block; text-decoration: none; color: inherit; border: 1px solid oklch(0.27 0.012 255); border-radius: 14px; overflow: hidden; background: oklch(0.185 0.013 255 / 0.85); transition: transform 0.18s, border-color 0.18s;">
+        <div style="height: 188px; border-bottom: 1px solid oklch(0.27 0.012 255); background-color: oklch(0.2 0.013 255); background-image: repeating-linear-gradient(135deg, oklch(0.27 0.012 255) 0px, oklch(0.27 0.012 255) 1px, transparent 1px, transparent 11px); display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 11px; color: oklch(0.5 0.012 255); letter-spacing: 0.08em;">[ project shot ]</span>
+        </div>
+        <div style="padding: 18px 18px 20px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+            <h3 style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 19px; letter-spacing: -0.01em; margin: 0px;">Breast Cancer Detection</h3>
+            <span style="font-size: 11px; color: oklch(0.82 0.13 195);">2024</span>
+          </div>
+          <p style="font-size: 13px; color: oklch(0.80 0.008 255); line-height: 1.55; margin: 8px 0px 0px;">End-to-end CNN pipeline classifying breast tissue images as benign or malignant — 98% accuracy through iterative tuning, deployed in a simulated production environment.</p>
+          <div style="font-size: 11px; color: oklch(0.52 0.012 255); margin-top: 12px; letter-spacing: 0.04em;">Python · TensorFlow · Keras · CNN</div>
+        </div>
+      </a>
+
+      <!-- ML-Integrated Social Media Platform -->
+      <a href="https://github.com/Amkangethe/CMSC447" target="_blank" rel="noopener" class="scp7" style="display: block; text-decoration: none; color: inherit; border: 1px solid oklch(0.27 0.012 255); border-radius: 14px; overflow: hidden; background: oklch(0.185 0.013 255 / 0.85); transition: transform 0.18s, border-color 0.18s;">
+        <div style="height: 188px; border-bottom: 1px solid oklch(0.27 0.012 255); background-color: oklch(0.2 0.013 255); background-image: repeating-linear-gradient(135deg, oklch(0.27 0.012 255) 0px, oklch(0.27 0.012 255) 1px, transparent 1px, transparent 11px); display: flex; align-items: center; justify-content: center;">
+          <span style="font-size: 11px; color: oklch(0.5 0.012 255); letter-spacing: 0.08em;">[ project shot ]</span>
+        </div>
+        <div style="padding: 18px 18px 20px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+            <h3 style="font-family: &quot;Space Grotesk&quot;, sans-serif; font-weight: 600; font-size: 19px; letter-spacing: -0.01em; margin: 0px;">ML Social Platform</h3>
+            <span style="font-size: 11px; color: oklch(0.82 0.13 195);">2024</span>
+          </div>
+          <p style="font-size: 13px; color: oklch(0.80 0.008 255); line-height: 1.55; margin: 8px 0px 0px;">Full-stack social media platform with Flask backend, SQLite database, REST APIs, and an integrated ML component — built Agile with Git and JIRA.</p>
+          <div style="font-size: 11px; color: oklch(0.52 0.012 255); margin-top: 12px; letter-spacing: 0.04em;">Python · Flask · SQLite · Machine Learning</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── Contact / Footer ── -->
+  <span id="contact" style="scroll-margin-top: 96px;"></span>
+  <footer style="border-top: 1px solid oklch(0.26 0.012 255); margin-top: 64px; padding: 56px 24px 40px;">
+    <div style="max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+
+      <!-- Personal card -->
+      <div style="border: 1px solid oklch(0.28 0.014 255); border-radius: 16px; background: oklch(0.185 0.013 255 / 0.6); backdrop-filter: blur(6px); padding: 28px 32px;">
+        <div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: oklch(0.82 0.13 195); margin-bottom: 10px;">// connect</div>
+        <h2 style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: clamp(26px, 3vw, 36px); letter-spacing: -0.03em; margin: 0 0 6px; color: oklch(0.97 0.006 255);">Allan Kangethe</h2>
+        <div style="font-size: 13px; color: oklch(0.72 0.012 255); margin-bottom: 4px;">Graduate Student</div>
+        <div style="font-size: 12.5px; color: oklch(0.56 0.012 255); letter-spacing: 0.02em;">AI/ML &amp; Software Engineering</div>
+      </div>
+
+      <!-- Grid cards -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+
+        <!-- Navigate -->
+        <div style="border: 1px solid oklch(0.28 0.014 255); border-radius: 14px; background: oklch(0.185 0.013 255 / 0.6); backdrop-filter: blur(6px); padding: 24px;">
+          <div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: oklch(0.82 0.13 195); margin-bottom: 16px;">// navigate</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="#top"      style="color: oklch(0.78 0.012 255); text-decoration: none; font-size: 13px;">Home</a>
+            <a href="#about"    style="color: oklch(0.78 0.012 255); text-decoration: none; font-size: 13px;">About</a>
+            <a href="#stack"    style="color: oklch(0.78 0.012 255); text-decoration: none; font-size: 13px;">Stack</a>
+            <a href="#projects" style="color: oklch(0.78 0.012 255); text-decoration: none; font-size: 13px;">Projects</a>
+            <a href="#contact"  style="color: oklch(0.78 0.012 255); text-decoration: none; font-size: 13px;">Contact</a>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div style="border: 1px solid oklch(0.28 0.014 255); border-radius: 14px; background: oklch(0.185 0.013 255 / 0.6); backdrop-filter: blur(6px); padding: 24px;">
+          <div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: oklch(0.82 0.13 195); margin-bottom: 16px;">// contact</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="mailto:amkangethe@outlook.com" style="color: oklch(0.78 0.012 255); text-decoration: none; font-size: 13px;">amkangethe@outlook.com</a>
+            <span style="color: oklch(0.56 0.012 255); font-size: 13px;">Washington, DC — USA</span>
+            <span style="color: oklch(0.56 0.012 255); font-size: 13px;">UTC−5</span>
+            <div style="display: inline-flex; align-items: center; gap: 7px; margin-top: 4px;">
+              <span style="position: relative; display: inline-flex; align-items: center; justify-content: center; width: 10px; height: 10px; flex-shrink: 0;">
+                <span style="position: absolute; inset: 0; border-radius: 50%; background: oklch(0.85 0.18 135 / 0.7); animation: 1.6s ease-out 0s infinite normal none running scping;"></span>
+                <span style="position: relative; width: 6px; height: 6px; border-radius: 50%; background: oklch(0.8 0.16 135);"></span>
+              </span>
+              <span style="font-size: 12px; color: oklch(0.72 0.012 255);">Open to roles &amp; internships</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resume -->
+        <div style="border: 1px solid oklch(0.28 0.014 255); border-radius: 14px; background: oklch(0.185 0.013 255 / 0.6); backdrop-filter: blur(6px); padding: 24px; display: flex; flex-direction: column;">
+          <div style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: oklch(0.82 0.13 195); margin-bottom: 16px;">// resume</div>
+
+          <!-- Clickable PDF area -->
+          <div onclick="document.getElementById('resume-modal').style.display='flex'" style="flex: 1; border: 1px solid oklch(0.3 0.014 255); border-radius: 10px; background: oklch(0.2 0.013 255); background-image: repeating-linear-gradient(135deg, oklch(0.27 0.012 255) 0px, oklch(0.27 0.012 255) 1px, transparent 1px, transparent 10px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 28px 20px; cursor: pointer; transition: border-color 0.18s;" onmouseover="this.style.borderColor='oklch(0.82 0.13 195)'" onmouseout="this.style.borderColor='oklch(0.3 0.014 255)'">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="oklch(0.82 0.13 195)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <span style="font-size: 11.5px; color: oklch(0.62 0.012 255); letter-spacing: 0.04em;">click to view</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 20px; border-top: 1px solid oklch(0.22 0.012 255); flex-wrap: wrap; gap: 10px;">
+        <span style="font-size: 12px; color: oklch(0.42 0.012 255);">© 2026 Allan Kangethe</span>
+        <span style="font-family: 'Space Mono', monospace; font-size: 11px; color: oklch(0.38 0.012 255); letter-spacing: 0.04em;">Built with Flask · Ollama</span>
+      </div>
+
+    </div>
+  </footer>
+
+  </div>
+</div></div></div>
+
+<!-- DC component logic — must remain inline; type="text/x-dc" is read by the DC runtime, not the browser -->
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;availableForWork&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;responseDelayMs&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:700,&quot;min&quot;:0,&quot;max&quot;:3000,&quot;step&quot;:100,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.logRef = React.createRef();
+    this.glow1Ref = React.createRef();
+    this.glow2Ref = React.createRef();
+    this.glow3Ref = React.createRef();
+    this.NAV = [
+      { label: "Home", id: "top" },
+      { label: "About", id: "about" },
+      { label: "Projects", id: "projects" },
+      { label: "Contact", id: "contact" },
+    ];
+    this.PROJECTS = {
+      tutor:  { name: "Socratic AI Tutor", blurb: "Full-stack app delivering Socratic-style LLM feedback on coding problems, run locally via Ollama.", tag: "Python · Flask · LLMs · Ollama", href: "https://github.com/Amkangethe/final-project" },
+      cancer: { name: "Breast Cancer Detection", blurb: "CNN pipeline classifying breast tissue images — 98% accuracy, deployed in a simulated production environment.", tag: "Python · TensorFlow · Keras · CNN", href: "https://github.com/Nalan12/AI4ALL_Project" },
+      social: { name: "ML Social Platform", blurb: "Full-stack social media app with Flask, SQLite, REST APIs, and an integrated ML component.", tag: "Python · Flask · SQLite · ML", href: "https://github.com/Amkangethe/CMSC447" },
+    };
+    this.state = { input: "", isTyping: false, messages: [], activeSection: "top" };
+  }
+
+  componentDidMount() {
+    this._tx = window.innerWidth / 2;
+    this._ty = window.innerHeight / 2;
+    this._cx = this._tx;
+    this._cy = this._ty;
+    this._onMove = (e) => { this._tx = e.clientX; this._ty = e.clientY; };
+    window.addEventListener("mousemove", this._onMove);
+    const tick = () => {
+      this._cx += (this._tx - this._cx) * 0.05;
+      this._cy += (this._ty - this._cy) * 0.05;
+      const w = window.innerWidth || 1;
+      const h = window.innerHeight || 1;
+      const nx = this._cx / w - 0.5;
+      const ny = this._cy / h - 0.5;
+      if (this.glow1Ref.current) this.glow1Ref.current.style.transform = `translate(${nx * 240}px, ${ny * 240}px)`;
+      if (this.glow2Ref.current) this.glow2Ref.current.style.transform = `translate(${-nx * 200}px, ${-ny * 200}px)`;
+      if (this.glow3Ref.current) this.glow3Ref.current.style.transform = `translate(${nx * 120}px, ${-ny * 150}px)`;
+      this._raf = requestAnimationFrame(tick);
+    };
+    this._raf = requestAnimationFrame(tick);
+
+    this._onScroll = () => {
+      let active = this.NAV[0].id;
+      for (const n of this.NAV) {
+        const el = document.getElementById(n.id);
+        if (el && el.getBoundingClientRect().top <= 140) active = n.id;
+      }
+      if (active !== this.state.activeSection) this.setState({ activeSection: active });
+    };
+    window.addEventListener("scroll", this._onScroll, { passive: true });
+    this._onScroll();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("mousemove", this._onMove);
+    window.removeEventListener("scroll", this._onScroll);
+    cancelAnimationFrame(this._raf);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevState || prevState.messages !== this.state.messages || prevState.isTyping !== this.state.isTyping) {
+      const el = this.logRef.current;
+      if (el) el.scrollTop = el.scrollHeight;
+    }
+  }
+
+  async fetchReply(text) {
+    try {
+      const r = await fetch('/api/assistant', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text }),
+      });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const d = await r.json();
+      return { text: d.reply || "Sorry, I didn't catch that." };
+    } catch (_) {
+      return this.cannedReply(text);
+    }
+  }
+
+  cannedReply(text) {
+    const t = text.toLowerCase();
+    const P = this.PROJECTS;
+    const has = (...ks) => ks.some((k) => t.includes(k));
+
+    if (has("llm", "language model", "ollama", "gpt", "tutor", "socratic", "feedback"))
+      return { text: "The LLM project:", project: P.tutor };
+    if (has("cancer", "medical", "image", "cnn", "classification", "tensorflow", "keras"))
+      return { text: "The deep learning / CNN project:", project: P.cancer };
+    if (has("social", "platform", "flask", "sqlite", "database", "full stack", "fullstack"))
+      return { text: "The full-stack social platform:", project: P.social };
+    if (has("ml", "ai", "model", "deep learning", "neural", "machine learning"))
+      return { text: "Start with the CNN project, then the LLM tutor:", project: P.cancer };
+    if (has("best", "favorite", "favourite", "proud", "strongest", "top "))
+      return { text: "The AI Tutor — ships a local LLM with zero API costs:", project: P.tutor };
+    if (has("work", "project", "portfolio", "built", "show me"))
+      return { text: "Three real projects — pick one:", project: P.tutor };
+    if (has("hire", "available", "freelance", "job", "role", "intern", "open to"))
+      return { text: "Open to SWE / ML roles and internships — reach me at amkangethe@outlook.com." };
+    if (has("skill", "stack", "tools", "tech", "language", "framework", "code"))
+      return { text: "Python, TensorFlow, Flask, Java, C++ — and the AI/ML layer on top." };
+    if (has("school", "study", "degree", "georgia tech", "education", "master", "grad", "omscs"))
+      return { text: "M.S. CS at Georgia Tech (OMSCS), specializing in AI — expected May 2028." };
+    if (has("umbc", "undergrad", "bachelor", "undergraduate"))
+      return { text: "B.S. CS from UMBC, graduated May 2025." };
+    if (has("contact", "email", "reach", "touch", "message", "linkedin"))
+      return { text: "Best at amkangethe@outlook.com, or the links at the bottom of the page." };
+    if (has("who are you", "are you real", "are you ai", "a bot", "chatgpt", "claude"))
+      return { text: "Just a little concierge Allan built into the site. Ask about the work, or scroll down." };
+    if (has("about", "who is", "what do", "what does", "tell me"))
+      return { text: "Allan's a CS grad student at Georgia Tech, building ML systems end to end — from CNNs to LLM apps." };
+    if (has("hi", "hey", "hello", "yo", "sup"))
+      return { text: "Hey — ask me about Allan's work, stack, or availability." };
+
+    return { text: "Try asking about the work, skills, or availability — or just scroll." };
+  }
+
+  async send(raw) {
+    const text = (raw != null ? raw : this.state.input).trim();
+    if (!text || this.state.isTyping) return;
+    this.setState((s) => ({
+      messages: [...s.messages, { isUser: true, text }],
+      input: "",
+      isTyping: true,
+    }));
+    const delay = this.props.responseDelayMs != null ? this.props.responseDelayMs : 700;
+    const [reply] = await Promise.all([
+      this.fetchReply(text),
+      new Promise((r) => setTimeout(r, delay)),
+    ]);
+    this.setState((s) => ({
+      messages: [...s.messages, { isAssistant: true, text: reply.text, project: reply.project || null }],
+      isTyping: false,
+    }));
+  }
+
+  renderVals() {
+    const labels = ["Work", "About", "Skills", "Contact"];
+    const active = this.state.activeSection;
+    return {
+      messages: this.state.messages,
+      isEmpty: this.state.messages.length === 0 && !this.state.isTyping,
+      input: this.state.input,
+      isTyping: this.state.isTyping,
+      available: this.props.availableForWork != null ? this.props.availableForWork : true,
+      logRef: this.logRef,
+      glow1Ref: this.glow1Ref,
+      glow2Ref: this.glow2Ref,
+      glow3Ref: this.glow3Ref,
+      nav: this.NAV.map((n) => ({ label: n.label, href: "#" + n.id, isActive: active === n.id, isInactive: active !== n.id })),
+      onInput: (e) => this.setState({ input: e.target.value }),
+      onKey: (e) => { if (e.key === "Enter") { e.preventDefault(); this.send(); } },
+      onSend: () => this.send(),
+      suggestions: labels.map((label) => ({ label, send: () => this.send(label) })),
+    };
+  }
+}
+</script>
+
+<!-- Resume PDF modal -->
+<div id="resume-modal" onclick="if(event.target===this)this.style.display='none'" style="display:none;position:fixed;inset:0;z-index:1000;align-items:center;justify-content:center;background:oklch(0 0 0 / 0.75);backdrop-filter:blur(6px);">
+  <div style="position:relative;width:min(860px,94vw);height:90vh;border:1px solid oklch(0.3 0.014 255);border-radius:16px;background:oklch(0.17 0.013 255);overflow:hidden;display:flex;flex-direction:column;">
+    <!-- Modal header -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid oklch(0.26 0.012 255);flex-shrink:0;">
+      <span style="font-size:12px;letter-spacing:0.12em;color:oklch(0.6 0.012 255);">Allan Kangethe — Resume</span>
+      <div style="display:flex;gap:10px;align-items:center;">
+        <a href="static/resume/resume.pdf" download style="font-size:12px;color:oklch(0.78 0.012 255);text-decoration:none;padding:5px 12px;border:1px solid oklch(0.3 0.014 255);border-radius:6px;">Download</a>
+        <button onclick="document.getElementById('resume-modal').style.display='none'" style="background:none;border:none;color:oklch(0.6 0.012 255);font-size:20px;cursor:pointer;line-height:1;padding:2px 6px;">×</button>
+      </div>
+    </div>
+    <!-- PDF embed -->
+    <iframe src="static/resume/resume.pdf" style="flex:1;width:100%;border:none;" title="Resume"></iframe>
+  </div>
+</div>
+
+<!-- Standalone scripts (typewriter + parallax run independently of DC runtime) -->
+<script src="../static/scripts/typewriter.js" defer></script>
+<script src="../static/scripts/parallax.js" defer></script>
+<script src="../static/scripts/chat.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+@keyframes sc-shine {
+  0%   { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes scpulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .35; transform: scale(.85); }
+}
+
+@keyframes scdot {
+  0%, 80%, 100% { transform: translateY(0); opacity: .35; }
+  40%           { transform: translateY(-4px); opacity: 1; }
+}
+
+@keyframes scbob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(4px); }
+}
+
+@keyframes scping {
+  0%   { transform: scale(1); opacity: .8; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+@keyframes scrollx-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes scrollx-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
